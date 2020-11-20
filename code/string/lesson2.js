@@ -6,8 +6,8 @@ export default (str) => {
     //给定任意子输入都返回第一个符合条件的子串
     let match = (str) => {
         let j = str.match(/^0+|1+/)[0]; // j为连续的0或1
-        let o = (j[0] ^ 1).toString().repeat(j.length); // o为j按位取反后的值
-        let reg = new RegExp(`(${j}${o})`);
+        let o = (j[0] ^ 1).toString().repeat(j.length); // o为j按位取反后的值，^ 表示取反
+        let reg = new RegExp(`^(${j}${o})`);
         if(reg.test(str)) {
             return RegExp.$1;
         }else{

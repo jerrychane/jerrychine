@@ -12,6 +12,7 @@ export default (arr) => {
   let str = arr.sort().join('')
   // 分组(单张或多张) (\d)\1+ 表示 n 张相同的牌 \d 表示只有1张牌
   let group = str.match(/(\d)\1+|\d/g)
+  // console.log(group)
   // 求两个数的最大公约数
   let gcd = (a, b) => {
     if (b === 0) {

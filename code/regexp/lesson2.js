@@ -21,4 +21,5 @@ export default (s, p) => {
       return match && isMatch(s.slice(1), p.slice(1))
     }
   }
+  return isMatch(s, p)
 }

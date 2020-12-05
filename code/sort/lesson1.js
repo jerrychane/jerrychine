@@ -1,7 +1,9 @@
 export default (arr) => {
   // arr.sort() 默认升序
-  // 进行降序排序
-  arr.sort((a, b) => a - b)
+  // 进行升序排列
+  // arr.sort((a, b) => a - b)
+  // 进行降序排列
+  arr.sort((a, b) => b - a)
   // 声明一个空数组用来存储奇偶排序后的数组
   let r = []
   // 记录奇数、偶数位下标

@@ -40,5 +40,5 @@ export default (arr) => {
       }
     }
   }
-  return max
+  return Math.max(max, arr[1] - arr[0])
 }

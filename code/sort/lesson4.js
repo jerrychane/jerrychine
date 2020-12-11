@@ -1,3 +1,4 @@
+// 常规解法:
 export default (arr) => {
   // 过滤掉非正整数
   arr = arr.filter(item => item > 0)

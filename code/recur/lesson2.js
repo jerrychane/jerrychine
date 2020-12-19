@@ -16,7 +16,7 @@ export default (str, words) => {
     } else {
       _arr.forEach((item, idx) => {
         // 复制一份数组
-        let tmp = [].concat._arr
+        let tmp = [].concat(_arr)
         // 剔除当前元素
         tmp.splice(idx, 1)
         range(r.concat(item), tmp)

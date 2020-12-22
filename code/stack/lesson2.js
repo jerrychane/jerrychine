@@ -31,7 +31,7 @@ export default (arr) => {
     n++
     for (let i = 0, il = top.length; i < il; i++) {
       tt = top[i]
-      for (let j = 0, jl = next.length; i < jl; j++) {
+      for (let j = 0, jl = next.length; j < jl; j++) {
         nn = next[j]
         width = Math.min(tt[1], nn[1]) - Math.max(tt[0], nn[0])
         if (width > maxWidth) {
@@ -51,7 +51,23 @@ export default (arr) => {
           result.push((n - 1) * width)
         }
       }
+    } else {
+      arr.push([[start, end]])
+      maxRect(arr, result, n++)
     }
   }
-  return 0
+  while (arr.length > 1) {
+    maxRect([].concat(arr), result)
+    arr.pop()
+  }
+  // 取最大值
+  let max = 0
+  let item = result.pop()
+  while (item) {
+    if (item > max) {
+      max = item
+    }
+    item = result.pop()
+  }
+  return max > 0 ? max : -1
 }
